@@ -9,44 +9,6 @@
 :root {
   --font-mono: 'Cascadia Code', 'Cascadia Mono', 'Source Code Pro', Consolas, Menlo, Monaco, monospace;
 
-  --bg:             #f7f7f5;
-  --bg-secondary:   #efefec;
-  --border:         #e0e0db;
-  --border-hover:   #1D9E75;
-  --text:           #1a1a18;
-  --text-secondary: #6b6b66;
-  --text-tertiary:  #a0a09a;
-  --accent:         #1D9E75;
-  --accent-hover:   #18b880;
-
-  --noise-opacity:  0.02;
-
-  --card-shadow:       0 1px 3px rgba(0,0,0,0.06);
-  --card-shadow-hover: 0 8px 24px rgba(0,0,0,0.08);
-}
-
-/* tmavý režim — media query */
-@media (prefers-color-scheme: dark) {
-  :root:not(.light) {
-    --bg:             #0e0e0c;
-    --bg-secondary:   #1a1a17;
-    --border:         #2a2a26;
-    --border-hover:   #1D9E75;
-    --text:           #e8e8e2;
-    --text-secondary: #7a7a72;
-    --text-tertiary:  #4a4a44;
-    --accent:         #1D9E75;
-    --accent-hover:   #22c487;
-
-    --noise-opacity:  0.035;
-
-    --card-shadow:       0 1px 3px rgba(0,0,0,0.3);
-    --card-shadow-hover: 0 8px 24px rgba(0,0,0,0.4);
-  }
-}
-
-/* tmavý režim — třída (JS přepínač) */
-:root.dark {
   --bg:             #0e0e0c;
   --bg-secondary:   #1a1a17;
   --border:         #2a2a26;
@@ -105,49 +67,6 @@ main {
   width: 100%;
 }
 
-/* theme toggle */
-.theme-toggle {
-  position: fixed;
-  bottom: 24px;
-  right: 24px;
-  z-index: 100;
-  width: 36px;
-  height: 36px;
-  border-radius: 8px;
-  border: 1px solid var(--border);
-  background: var(--bg-secondary);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-secondary);
-  transition: border-color 0.15s ease, color 0.15s ease, transform 0.2s ease;
-}
-
-.theme-toggle:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-  transform: scale(1.05);
-}
-
-.theme-toggle svg {
-  width: 14px;
-  height: 14px;
-  position: absolute;
-  transition: opacity 0.15s ease, transform 0.25s ease;
-}
-
-.theme-toggle .icon-sun  { opacity: 1; transform: rotate(0deg)   scale(1);   }
-.theme-toggle .icon-moon { opacity: 0; transform: rotate(-20deg) scale(0.7); }
-
-:root.dark .theme-toggle .icon-sun  { opacity: 0; transform: rotate(20deg)  scale(0.7); }
-:root.dark .theme-toggle .icon-moon { opacity: 1; transform: rotate(0deg)   scale(1);   }
-
-@media (prefers-color-scheme: dark) {
-  :root:not(.light) .theme-toggle .icon-sun  { opacity: 0; transform: rotate(20deg) scale(0.7); }
-  :root:not(.light) .theme-toggle .icon-moon { opacity: 1; transform: rotate(0deg)  scale(1);   }
-}
-
 /* hero */
 .hero {
   padding: 72px 0 56px;
@@ -165,6 +84,7 @@ main {
 
 .hero-dot   { color: var(--text-tertiary); font-weight: 700; }
 .hero-paren { color: var(--text-tertiary); font-weight: 700; }
+.hero-semi  { color: var(--text-tertiary); font-weight: 700; }
 
 .hero-handle {
   font-weight: 700;
